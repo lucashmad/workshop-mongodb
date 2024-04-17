@@ -9,13 +9,11 @@ public class UserDTO implements Serializable {
     private String name;
     private String email;
 
-    public UserDTO() {
-    }
 
-    public UserDTO(User data) {
-        this.id = data.getId();
-        this.name = data.getName();
-        this.email = data.getEmail();
+    public UserDTO(User data){
+        id = data.getId();
+        name = data.getName();
+        email = data.getEmail();
     }
 
     public String getId() {
@@ -42,3 +40,4 @@ public class UserDTO implements Serializable {
         this.email = email;
     }
 }
+

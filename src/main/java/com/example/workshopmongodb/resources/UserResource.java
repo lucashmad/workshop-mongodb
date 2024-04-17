@@ -22,7 +22,7 @@ public class UserResource {
     @GetMapping
     public ResponseEntity<List<UserDTO>> findAll(){
         List<User> userList = service.findAll();
-        List<UserDTO> userDTOList = userList.stream().map(x -> new UserDTO(x)).collect(Collectors.toList());
+        List<UserDTO> userDTOList = userList.stream().map(x ->  new UserDTO(x)).collect(Collectors.toList());
         return ResponseEntity.ok().body(userDTOList);
     }
 }

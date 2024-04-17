@@ -1,5 +1,7 @@
 package com.example.workshopmongodb.domain;
 
+import com.example.workshopmongodb.dto.UserDTO;
+import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
