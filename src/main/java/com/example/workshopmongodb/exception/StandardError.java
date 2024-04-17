@@ -1,4 +1,4 @@
-package com.example.workshopmongodb.service.service.exception;
+package com.example.workshopmongodb.exception;
 
 import java.io.Serializable;
 

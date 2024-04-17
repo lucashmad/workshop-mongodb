@@ -1,4 +1,4 @@
-package com.example.workshopmongodb.service.service.exception;
+package com.example.workshopmongodb.exception;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
@@ -15,10 +15,9 @@ public class ResourceExceptionHandler {
         HttpStatus status = HttpStatus.NOT_FOUND;
         StandardError standardError= new StandardError(System.currentTimeMillis(),
                 status.value(),
-                "Nao encontrado",
+                "Not Found",
                 e.getMessage(),
                 request.getRequestURI());
         return ResponseEntity.status(status).body(standardError);
     }
-
 }
