@@ -1,21 +1,34 @@
 package com.example.workshopmongodb.dto;
 
 import com.example.workshopmongodb.domain.User;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.io.Serializable;
 
-@NoArgsConstructor
-@Getter
-@Setter
 public class AuthorDTO implements Serializable {
     private String id;
     private String name;
 
+    public AuthorDTO() {
+    }
+
     public AuthorDTO(User author){
         id = author.getId();
         name = author.getName();
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

@@ -34,7 +34,8 @@ public class UserService {
     }
 
     public User fromDTO(UserDTO dataDTO){
-        return new User(dataDTO.getId(), dataDTO.getName(), dataDTO.getEmail());
+        User user = new User(dataDTO.getId(), dataDTO.getName(), dataDTO.getEmail());
+        return user;
     }
 
 
