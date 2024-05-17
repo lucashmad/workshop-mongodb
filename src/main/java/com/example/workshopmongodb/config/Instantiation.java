@@ -3,6 +3,7 @@ package com.example.workshopmongodb.config;
 import com.example.workshopmongodb.domain.Post;
 import com.example.workshopmongodb.domain.User;
 import com.example.workshopmongodb.dto.AuthorDTO;
+import com.example.workshopmongodb.dto.CommentDTO;
 import com.example.workshopmongodb.repository.PostRepository;
 import com.example.workshopmongodb.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +40,13 @@ public class Instantiation implements CommandLineRunner {
 
         Post postOne = new Post(null, simpleDateFormat.parse("21/03/2018"), "Bora viajar", "Partiu Rio de janeiro", new AuthorDTO(userOne));
         Post postTwo = new Post(null, simpleDateFormat.parse("19/08/2021"), "Pedra azul", "Pedra azul esta frio", new AuthorDTO(userOne));
+
+        CommentDTO commentOne = new CommentDTO("Boa viagem!", simpleDateFormat.parse("21/03/2024"), new AuthorDTO(userTree));
+        CommentDTO commentTwo = new CommentDTO("Com certeza kkk", simpleDateFormat.parse("21/03/2024"), new AuthorDTO(userTwo));
+
+        postOne.getComments().addAll(Arrays.asList(commentOne));
+        postTwo.getComments().addAll(Arrays.asList(commentTwo));
+
         postRepository.saveAll(Arrays.asList(postOne, postTwo));
 
         userOne.getPosts().addAll(Arrays.asList(postOne));
